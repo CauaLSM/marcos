@@ -1179,8 +1179,7 @@ img {
   border-radius: 50%;
   margin: 0 0 0.5rem 0;
   position: relative;
-  border: #d75973 3px solid;
-
+  
 }
 .slider > a:active {
   top: 1px;

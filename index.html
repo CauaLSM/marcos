@@ -15,8 +15,7 @@
 	</head>
 	<body class="loading">
 		<!-- Música de Fundo -->
-		<iframe src="assets/audio/3.CAETANO VELOSO - VOCÊ É LINDA.mp3" allow="autoplay" style="display:none" id="iframeAudio">
-		</iframe> 
+		
 	
 		<div id="wrapper">
 			<div id="bg"></div>
@@ -24,6 +23,58 @@
 			<div id="main">
                 <!-- Header -->
 				<header id="header">
+					 <!-- Botão de Play/Pause -->
+    <button id="playButton">
+        <!-- SVG do ícone de Play (inicialmente mostrado) -->
+        <svg id="playIcon" xmlns="https://www.svgrepo.com/svg/138082/play-button" viewBox="0 0 24 24">
+            <path id="playPath" d="M8 5v14l11-7z" fill="currentColor"/>
+        </svg>
+    </button>
+
+    <!-- Áudio -->
+    <audio id="player" autoplay loop>
+        <source src="assets/audio/3.CAETANO VELOSO - VOCÊ É LINDA.mp3" type="audio/mp3">
+    </audio>
+
+    <script>
+        // Seleciona os elementos
+        let audio = document.getElementById("player");
+        let button = document.getElementById("playButton");
+        let playIcon = document.getElementById("playIcon");
+
+        // Adiciona o evento de clique no botão
+        button.addEventListener("click", function () {
+            if (audio.paused) {
+                audio.play(); // Toca o áudio
+                // Muda o ícone para o de pause
+                playIcon.src = "assets/images/pause-icon.svg"; // Alterar para o ícone de pausa
+            } else {
+                audio.pause(); // Pausa o áudio
+                // Muda o ícone para o de play
+                playIcon.src = "assets/images/play-icon.svg"; // Alterar para o ícone de play
+            }
+        });
+    </script>
+
+<!-- CSS -->
+<style>
+     #playButton {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+        }
+
+        /* Ajuste o tamanho do ícone */
+        #playIcon {
+            width: 40px;
+            height: 40px;
+        }
+</style>
+
 				    <h1>Parabéns Amor!</h1>
 				    	<p>Quem diria que ao fugir da vergonha de um arrastão esquisito na UFBA, ficaria com alguém incrível como você...</p>
 							<p>Somos iguais e ao mesmo tempo diferentes, todos os dias com você são interessantes, e sempre descubro algo novo sobre você.</p>
